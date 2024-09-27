@@ -1,0 +1,866 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    line-height: 1.6;
+    color: #f0f0f0;
+    background-color: #1a001f; /* Base dark background */
+    overflow-x: hidden;
+    position: relative; /* To contain pseudo-elements */
+    min-height: 100vh; /* Ensure it covers the viewport */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(0, 173, 181, 0.2), transparent 70%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.2), transparent 70%),
+                linear-gradient(45deg, rgba(0, 173, 181, 0.1), rgba(255, 0, 255, 0.1));
+    background-blend-mode: screen;
+    opacity: 0.6;
+    pointer-events: none; /* Ensures the background doesn't block interactions */
+    z-index: -1; /* Places it behind all other content */
+    animation: glowAnimation 20s infinite alternate; /* Optional: Add subtle animation */
+}
+body {
+    line-height: 1.6;
+    color: #f0f0f0;
+    background-color: #1a001f; /* Base dark background */
+    overflow-x: hidden;
+    position: relative; /* To contain pseudo-elements */
+    min-height: 100vh; /* Ensure it covers the viewport */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 20%, rgba(0, 173, 181, 0.2), transparent 70%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 255, 0.2), transparent 70%),
+                linear-gradient(45deg, rgba(0, 173, 181, 0.1), rgba(255, 0, 255, 0.1));
+    background-blend-mode: screen;
+    opacity: 0.6;
+    pointer-events: none; /* Ensures the background doesn't block interactions */
+    z-index: -1; /* Places it behind all other content */
+    animation: glowAnimation 20s infinite alternate; /* Optional: Add subtle animation */
+}
+
+
+h2 {
+    color: #e0e0e0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Subtle glow */
+}
+
+h2 {
+    color: #ffffff; /* Ensuring h2 uses the glowing color */
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: rgba(20, 20, 20, 0.95); /* Slight transparency for modern look */
+    color: #fff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00adb5;
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #00adb5;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 173, 181, 0.7); /* Glowing effect */
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(rgba(44, 1, 77, 0.8), rgba(44, 1, 77, 0.8)), 
+                url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fffbfb;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(0, 173, 181, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+#hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-shadow: 0 0 15px rgba(0, 173, 181, 0.8); /* Glowing text */
+    animation: glow 2s infinite alternate;
+}
+
+#hero p {
+    margin-bottom: 25px;
+    font-size: 1.3em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #00adb5;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 173, 181, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+
+.btn:hover {
+    background: #007b7f;
+    transform: translateY(-3px);
+}
+
+.btn:hover::after {
+    top: 0;
+    left: 0;
+}
+
+/* Glow Animation */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 173, 181, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 173, 181, 1);
+    }
+}
+
+/* About Section */
+#about {
+    padding: 80px 20px;
+    background: #1a001f;
+    color: #f0f0f0;
+}
+
+#about h2 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    box-shadow: 0 0 20px rgba(0, 173, 181, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.about-content p {
+    line-height: 1.8;
+    font-size: 1.1em;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.about-content div {
+    max-width: 650px;
+}
+
+/* Projects Section */
+#projects {
+    background: linear-gradient(135deg, #2c014d, #0d0d0d); /* Added gradient */
+    padding: 80px 20px;
+    color: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+#projects::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 173, 181, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+#projects h2 {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5em;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-card {
+    position: relative;
+    width: 220px;
+    height: 300px;
+    background-color: #1c1c1c;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    gap: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(0, 173, 181, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 173, 181, 0.8);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    background: linear-gradient(135deg, #e81cff, #00ffea);
+    z-index: -1;
+    filter: blur(20px);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card h3 {
+    margin: 0;
+    font-size: 1.5em;
+    text-shadow: 0 0 5px rgba(0, 173, 181, 0.7);
+}
+
+.project-card p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.project-card .tech {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-card .tech span {
+    background: #00adb5;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    color: #fff;
+    transition: background 0.3s ease-in-out;
+}
+
+.project-card .tech span:hover {
+    background: #007b7f;
+}
+
+/* Skills Section - Code Theme */
+#skills {
+    padding: 80px 20px;
+    background: #1a001f; /* Keep the base dark theme */
+    color: #00ffea; /* Use neon-like color for text */
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace; /* Terminal-like font */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Add a subtle grid background */
+#skills::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Section heading */
+#skills h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Neon glow effect */
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Neon Glow Animation */
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.7);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 1);
+    }
+}
+
+/* Skills list styled as "tags" or "code blocks" */
+.skills-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 0;
+}
+
+.skills-list li {
+    background: rgba(0, 255, 234, 0.1);
+    color: #00ffea;
+    padding: 12px 20px;
+    border: 2px solid #00ffea;
+    border-radius: 8px;
+    font-weight: bold;
+    position: relative;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+/* Skills list hover effect */
+.skills-list li:hover {
+    background: rgba(0, 255, 234, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+/* Optional: Add a blinking cursor next to each skill like a terminal */
+.skills-list li::after {
+    content: '█';
+    font-weight: normal;
+    margin-left: 10px;
+    animation: blink 1s infinite step-start;
+}
+
+/* Blinking Cursor Animation */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Optional: Add floating code snippets in the background */
+#skills .floating-code {
+    position: absolute;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.08);
+    animation: floatCode 20s infinite alternate;
+}
+
+@keyframes floatCode {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Place some floating code snippets randomly */
+#skills .floating-code:nth-child(1) {
+    top: 10%;
+    left: 20%;
+}
+
+#skills .floating-code:nth-child(2) {
+    top: 40%;
+    left: 60%;
+}
+
+#skills .floating-code:nth-child(3) {
+    top: 70%;
+    left: 30%;
+}
+
+
+/* Contact Section - Code Theme with Gradient */
+#contact {
+    padding: 80px 20px;
+    /* Updated gradient background */
+    background: linear-gradient(135deg, #0d0d0d, #1c1c1c, #2c014d);
+    color: #00ffea; /* Neon-like text color */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code feel */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Enhanced Gradient Overlay with Pseudo-element */
+#contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Adding a multi-layered gradient with radial elements */
+    background: radial-gradient(circle at 25% 25%, rgba(0, 255, 234, 0.1), transparent 60%),
+                radial-gradient(circle at 75% 75%, rgba(255, 0, 255, 0.1), transparent 60%),
+                linear-gradient(45deg, rgba(0, 255, 234, 0.05), rgba(255, 0, 255, 0.05));
+    background-blend-mode: screen;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1;
+    animation: gradientAnimation 30s infinite alternate;
+}
+
+/* Section Heading with Neon Glow */
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 234, 0.5), 0 0 20px rgba(0, 255, 234, 0.7);
+    animation: neonGlow 1.5s infinite alternate;
+}
+
+/* Neon Glow Animation */
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 10px rgba(0, 255, 234, 0.5), 0 0 20px rgba(0, 255, 234, 0.7);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(0, 255, 234, 0.7), 0 0 30px rgba(0, 255, 234, 1);
+    }
+}
+
+/* Gradient Animation for Background Overlay */
+@keyframes gradientAnimation {
+    0% {
+        background: radial-gradient(circle at 25% 25%, rgba(0, 255, 234, 0.1), transparent 60%),
+                    radial-gradient(circle at 75% 75%, rgba(255, 0, 255, 0.1), transparent 60%),
+                    linear-gradient(45deg, rgba(0, 255, 234, 0.05), rgba(255, 0, 255, 0.05));
+    }
+    50% {
+        background: radial-gradient(circle at 25% 25%, rgba(255, 0, 255, 0.1), transparent 60%),
+                    radial-gradient(circle at 75% 75%, rgba(0, 255, 234, 0.1), transparent 60%),
+                    linear-gradient(135deg, rgba(0, 255, 234, 0.05), rgba(255, 0, 255, 0.05));
+    }
+    100% {
+        background: radial-gradient(circle at 25% 25%, rgba(0, 255, 234, 0.1), transparent 60%),
+                    radial-gradient(circle at 75% 75%, rgba(255, 0, 255, 0.1), transparent 60%),
+                    linear-gradient(225deg, rgba(0, 255, 234, 0.05), rgba(255, 0, 255, 0.05));
+    }
+}
+
+/* Contact Form Container styled as a Code Editor */
+.contact-form {
+    background: rgba(20, 20, 20, 0.95);
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 234, 0.5);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Terminal-like Borders and Prompt Symbol */
+.contact-form::before {
+    content: '>';
+    color: #00ffea;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1.2em;
+}
+
+.contact-form::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #00ffea;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+/* Form Inputs Styled as Code Lines */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #00ffea;
+    color: #00ffea;
+    padding: 10px 0;
+    margin-bottom: 30px;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    outline: none;
+    transition: border-bottom 0.3s ease-in-out;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(0, 255, 234, 0.5);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Submit Button Styled as a Command */
+.contact-form .btn {
+    background: #00ffea;
+    color: #0d0d0d;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 255, 234, 0.4);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.contact-form .btn:hover {
+    background: #00b3a6;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 255, 234, 0.6);
+}
+
+/* Optional: Floating Code Snippets in the Background */
+#contact .floating-code {
+    position: absolute;
+    font-size: 12px;
+    color: rgba(0, 255, 234, 0.08);
+    animation: floatCode 25s infinite alternate;
+}
+
+@keyframes floatCode {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-30px) rotate(360deg);
+    }
+}
+
+/* Place Some Floating Code Snippets Randomly */
+#contact .floating-code:nth-child(1) {
+    top: 10%;
+    left: 20%;
+}
+
+#contact .floating-code:nth-child(2) {
+    top: 40%;
+    left: 60%;
+}
+
+#contact .floating-code:nth-child(3) {
+    top: 70%;
+    left: 30%;
+}
+
+
+footer {
+    background: rgba(20, 20, 20, 0.95);
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .project-cards {
+        gap: 20px;
+    }
+
+    .project-card {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project-card {
+        width: 80%;
+    }
+
+    .skills-list {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+
+    .logo {
+        font-size: 1.5em;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    #hero {
+        padding: 80px 10px;
+    }
+
+    #hero h2 {
+        font-size: 2.5em;
+    }
+
+    #about h2,
+    #projects h2,
+    #skills h2 {
+        font-size: 2em;
+    }
+}
+
+/* Glowing Border for Sections */
+section {
+    position: relative; /* Ensures the pseudo-element is positioned correctly */
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); /* Subtle inner shadow */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Transparent border for better contrast */
+    overflow: hidden; /* Prevents the pseudo-element from overflowing */
+}
+
+/* Glowing Border Effect */
+section::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 15px;
+    background: linear-gradient(45deg, rgba(255, 0, 150, 0.5), rgba(0, 204, 255, 0.5));
+    z-index: -1; /* Positions the glow behind the section content */
+    filter: blur(10px); /* Adds the glow effect */
+}
+
+/* Additional Glow Effect */
+section:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4), 0 0 50px rgba(255, 0, 150, 0.3);
+    transition: box-shadow 0.5s ease-in-out;
+}
+
+/* Social Buttons Container */
+.social-buttons {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* General Social Button Styles */
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 10px;
+    padding: 10px 10px;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* LinkedIn Button Specific Styles */
+.social-btn.linkedin {
+    background-color: #0077B5; /* LinkedIn Blue */
+}
+
+.social-btn.linkedin:hover {
+    background-color: #005582; /* Darker LinkedIn Blue on Hover */
+    transform: translateY(-2px); /* Slight Lift on Hover */
+}
+
+/* GitHub Button Specific Styles (Optional) */
+.social-btn.github {
+    background-color: #333; /* GitHub Dark Grey */
+}
+
+.social-btn.github:hover {
+    background-color: #000; /* Black on Hover */
+    transform: translateY(-2px); /* Slight Lift on Hover */
+}
+
+/* Icon Styling */
+.social-btn i {
+    margin-right: 4px; /* Space between icon and text */
+    font-size: 1.0em; /* Slightly larger icon */
+}
+
+/* Instagram Button Specific Styles */
+.social-btn.instagram {
+    /* Instagram's gradient colors */
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.social-btn.instagram:hover {
+    opacity: 0.8; /* Slight transparency on hover */
+    transform: translateY(-2px); /* Slight Lift on Hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f1f1f1;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+    color: #555;
+}
+
+
+
