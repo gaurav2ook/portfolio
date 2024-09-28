@@ -18,6 +18,9 @@ Get in Touch
 LinkedIn: gaurav-kumbhare
 Email: gauravkumbhare2002@gmail.com
 
+Portfolio Preview:
+
+
 
 ![Screenshot 2024-09-28 145410](https://github.com/user-attachments/assets/f2340843-efc7-4af0-a240-92379f01d155)
 
